@@ -8,6 +8,50 @@ body {
 	/*To hide the horizontal scroller appearing during the animation*/
 	overflow: hidden;
 }
+.login-form {
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 20px;
+}
+
+input {
+	-webkit-border-radius: 3px; //For Safari, etc.
+    -moz-border-radius: 3px; //For Mozilla, etc.
+    border-radius: 3px; //CSS3 Feature
+}
+
+#center {
+  width: 640px;
+  height: 100px;
+  position: inherit;
+  top:-50px;
+  bottom: 0;
+  left: 50px;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+#app_name {
+  font-size: 4em;
+  /* Border is a shadow */
+  /*text-shadow: 0px 0px 20px #000;*/
+
+  /* Solid border */
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+
+}
+
+#slogan {
+  font-size:2em;
+  /* Border is a shadow */
+  /*text-shadow: 0px 0px 20px #000;*/
+
+  /* Solid border */
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+
+}
 
 #clouds{
 	padding: 100px 0;
@@ -18,9 +62,9 @@ body {
 }
 
 /*Time to finalise the cloud shape*/
-.cloud {
+.car {
 	width: 200px; height: 60px;
-	background: #fff;
+	background: #aaf;
 	
 	border-radius: 200px;
 	-moz-border-radius: 200px;
@@ -29,12 +73,12 @@ body {
 	position: relative; 
 }
 
-.cloud:before, .cloud:after {
+.car:before, .car:after {
 	content: '';
 	position: absolute; 
-	background: #fff;
-	width: 100px; height: 80px;
-	position: absolute; top: -15px; left: 10px;
+	background: #000;
+	width: 50px; height: 50px;
+	position: absolute; top: 20px; left: 25px;
 	
 	border-radius: 100px;
 	-moz-border-radius: 100px;
@@ -45,10 +89,103 @@ body {
 	-moz-transform: rotate(30deg);
 }
 
-.cloud:after {
-	width: 120px; height: 120px;
-	top: -55px; left: auto; right: 15px;
+.car:after {
+	width: 50px; height: 50px;
+	top: 20px; left: auto; right: 20px;
 }
+
+.car_top1 {
+	left:72px;
+	top:35px;
+	width: 100px; height: 60px;
+	background: #bbf;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	
+	position: relative; 
+	
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+}
+
+.car_top2 {
+	left:280px;
+	top:39px;
+	width: 65px; height: 40px;
+	background: #bbf;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	
+	position: relative; 
+	-webkit-animation: moveclouds 25s linear infinite;
+	-moz-animation: moveclouds 25s linear infinite;
+	-o-animation: moveclouds 25s linear infinite;
+}
+
+.car_top3 {
+	left:80px;
+	top:43px;
+	width: 100px; height: 60px;
+	background: #bbf;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	
+	position: relative; 
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+.car_top4 {
+	left:72px;
+	top:43px;
+	width: 100px; height: 60px;
+	background: #bbf;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	
+	position: relative; 
+	-webkit-animation: moveclouds 18s linear infinite;
+	-moz-animation: moveclouds 18s linear infinite;
+	-o-animation: moveclouds 18s linear infinite;
+}
+
+.car_top5 {
+	left:-80px;
+	top:-110px;
+	width: 100px; height: 60px;
+	background: #bbf;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	position: relative; 
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+
+.app_name {
+	position: center;
+	width: 48px;
+	border: solid;
+	border-width:5px;
+}
+
 
 /*Time to animate*/
 .x1 {
@@ -57,14 +194,14 @@ body {
 	-o-animation: moveclouds 15s linear infinite;
 }
 
-/*variable speed, opacity, and position of clouds for realistic effect*/
+/*variable speed, opacity, and position of cars for realistic effect*/
 .x2 {
 	left: 200px;
 	
 	-webkit-transform: scale(0.6);
 	-moz-transform: scale(0.6);
 	transform: scale(0.6);
-	opacity: 0.6; /*opacity proportional to the size*/
+	//opacity: 0.7; /*opacity proportional to the size*/
 	
 	/*Speed will also be proportional to the size and opacity*/
 	/*More the speed. Less the time in 's' = seconds*/
@@ -74,12 +211,12 @@ body {
 }
 
 .x3 {
-	left: -250px; top: -200px;
+	//left: -250px; //top: -200px;
 	
 	-webkit-transform: scale(0.8);
 	-moz-transform: scale(0.8);
 	transform: scale(0.8);
-	opacity: 0.8; /*opacity proportional to the size*/
+	//opacity: 0.9; /*opacity proportional to the size*/
 	
 	-webkit-animation: moveclouds 20s linear infinite;
 	-moz-animation: moveclouds 20s linear infinite;
@@ -87,12 +224,12 @@ body {
 }
 
 .x4 {
-	left: 470px; top: -250px;
+	//left: 470px; //top: -250px;
 	
 	-webkit-transform: scale(0.75);
 	-moz-transform: scale(0.75);
 	transform: scale(0.75);
-	opacity: 0.75; /*opacity proportional to the size*/
+	//opacity: 0.85; /*opacity proportional to the size*/
 	
 	-webkit-animation: moveclouds 18s linear infinite;
 	-moz-animation: moveclouds 18s linear infinite;
@@ -105,7 +242,7 @@ body {
 	-webkit-transform: scale(0.8);
 	-moz-transform: scale(0.8);
 	transform: scale(0.8);
-	opacity: 0.8; /*opacity proportional to the size*/
+	//opacity: 0.9; /*opacity proportional to the size*/
 	
 	-webkit-animation: moveclouds 20s linear infinite;
 	-moz-animation: moveclouds 20s linear infinite;
@@ -113,14 +250,14 @@ body {
 }
 
 @-webkit-keyframes moveclouds {
-	100% {margin-left: 1000px;}
-	0% {margin-left: -1000px;}
+	0% {margin-left: 100%;}
+	100% {margin-left: -100%;}
 }
 @-moz-keyframes moveclouds {
-	100% {margin-left: 1000px;}
-	0% {margin-left: -1000px;}
+	0% {margin-left: 100%;}
+	100% {margin-left: -100%;}
 }
 @-o-keyframes moveclouds {
-	100% {margin-left: 1000px;}
-	0% {margin-left: -1000px;}
+	0% {margin-left: 100%;}
+	100% {margin-left: -100%;}
 }
