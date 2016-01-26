@@ -1,7 +1,3 @@
-/*Lets start with the cloud formation rather*/
-
-/*The container will also serve as the SKY*/
-
 *{ margin: 0; padding: 0;}
 
 body {
@@ -176,6 +172,9 @@ input {
 	-webkit-animation: moveclouds 20s linear infinite;
 	-moz-animation: moveclouds 20s linear infinite;
 	-o-animation: moveclouds 20s linear infinite;
+}
+.border{
+	padding-top: 12%;
 }
 
 
