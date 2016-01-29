@@ -13,28 +13,34 @@
 		<link href="css/bootstrapmin.css" rel="stylesheet">
 		-->
 		<link href="static/css/parku.css" rel="stylesheet">
-		
-
+		<link href="static/css/credentials.css" rel="stylesheet">
 	</head>
-
 	<body>
 		<div id="clouds">
 			<div class="car_top1"></div>
 			<div class="car x1"></div>
 			<div id="center">
-			  <div id="app_name">
-			  	Park U
-			  </div>
-			  <div id="slogan">
-				No, Park U!
-			  </div>
-			  <div class="border">
-			  <form class="login-form">
-				<input type="text" placeholder="login" name="firstname"><br>
-				<input type="password" placeholder="password" name="lastname">
-			  </form>
+				<div id="app_name">
+			  		Park U
+			  	</div>
+				<div id="slogan">
+					No, Park U!
+				</div>
+				<div class="border">
+					<div class="wrap center"> <!-- Just to center ver and hor -->
+						<div class="wrap-label">
+							<label for="name"></label>
+							<p class="iconicfill-pen-alt2"></p>
+						</div>
+						<input type="text" placeholder="@ucsd.edu" id="name" ><br>
+						<input type="password" placeholder="Password" id="name"><br>
+						<!-- <div class="signin"> -->
+							<button type="submit" style="text-align: center;">Sign in</button>
+						<!-- </div> -->
+					</div>
+				</div>
 			</div>
-			</div>
+			
 			<!-- Time for multiple clouds to dance around -->
 			<div class="car_top2"></div>
 			<div class="car x2"></div>
@@ -45,6 +51,7 @@
 			<div class="car_top5"></div>
 			<div class="car x5"></div>
 		</div>
+		<script src="static/js/pen.js"></script>
 
 	</body>
 </html>
