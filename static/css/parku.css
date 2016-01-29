@@ -16,6 +16,17 @@ input {
     -moz-border-radius: 3px; //For Mozilla, etc.
     border-radius: 3px; //CSS3 Feature
 }
+.border button{
+	
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+ 
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
 
 #center {
   width: 640px;
