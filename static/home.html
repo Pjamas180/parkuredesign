@@ -10,18 +10,19 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/homepage.css" rel="stylesheet">
-
+    
     <!-- Custom CSS -->
     <link href="css/logo-nav.css" rel="stylesheet">
+    
+    <!-- DropDown -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Webpage Logo -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+
   </head>
   <body>
     <div class="wrapper">
-        <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <button type="button" class="btn btn-default navbar-btn">Sign out</button>
-                <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
-            </div>
-        </nav> -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,9 +33,6 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <!--<a class="navbar-brand" href="#">
-                        <img src="http://placehold.it/150x50&text=Logo" alt="">
-                    </a> -->
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -60,33 +58,52 @@
             <div class="options">
                 <p>Current registered permits:&nbsp&nbspYou currently have none registered.</p><br><br><br>
                 <p class="custom_option">To purchase a permit complete the list below.</p><br>
-                <p>Select a spot type:&nbsp&nbsp<select name="permit_type">
-                                        <option value="visitor">Visitor (V)</option>
-                                        <option value="vp">Visitor Premium (VP)</option>
-                                        </select></p><br>
-                <p>Select a time limit:&nbsp&nbsp<select name="time_limit">
-                                        <option value="one">1 hour</option>
-                                        <option value="two">2 hours</option>
-                                        <option value="three">3 hours</option>
-                                        <option value="four">4 hours</option>
-                                        <option value="five">5 hours</option>
-                                        <option value="six">6 hours</option>
-                                        <option value="seven">7 hours</option>
-                                        <option value="all_day">All Day</option>
-                                        </select></p><br>
-                <p>Select your vehicle:&nbsp&nbsp<select name="registered_vehicles">
-                                        <option value="car1">911 Porsche GT3 RS (License: L0LD3BT) </option>
-                                        <option value="car2">McLaren P1 (License: WH0T-M9)</option>
-                                        <option value="car3">Audi R8 (License: XCUS3M3)</option>
-                                        </select></p>
-
-            <button type="submit" style="text-align: center;">Purchase</button>
+                <div class="drop">
+                    <p>Select a spot type:&nbsp&nbsp</p>
+                    <ul>
+                        <li class="dropdown">
+                        <a href="#" data-toggle="dropdown">Spot Type<i class="icon-arrow"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Visitor (V)</a></li>
+                                <li><a href="#">Visitor Premium (VP)</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>Select a time limit:</p>
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown">Time Limit<i class="icon-arrow"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">1 hour</a></li>
+                                <li><a href="#">2 hours</a></li>
+                                <li><a href="#">4 hours</a></li>
+                                <li><a href="#">8 hours</a></li>
+                                <li><a href="#">All day</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>Select your vehicle:&nbsp&nbsp</p>
+                    <ul>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown">Vehicle<i class="icon-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">911 Porsche GT3 RS (License: L0LD3BT)</a></li>
+                            <li><a href="#">McLaren P1 (License: WH0T-M9)</a></li>
+                            <li><a href="#">Audi R8 (License: XCUS3M3)</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                </div>
+            <button type="submit" style="text-align: center;">Purchase</button>    
             </div>
-
+            
         </div>
         <!-- jQuery -->
         <script src="js/jquery.js"></script>
-
+        
+        <!-- Dropdown -->
+        <script src="js/index.js"></script>
+        
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
     </div>

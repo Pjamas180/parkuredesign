@@ -12,7 +12,7 @@
 		<!
 		<link href="css/bootstrapmin.css" rel="stylesheet">
 		-->
-		<link href="css/parku.css" rel="stylesheet">
+		<link href="css/login.css" rel="stylesheet">
 		<link href="css/credentials.css" rel="stylesheet">
 	</head>
 	<body>
@@ -20,28 +20,30 @@
 			<div class="car_top1"></div>
 			<div class="car x1"></div>
 			<div id="center">
-				<div id="app_name">
-			  		Park U
-			  	</div>
-				<div id="slogan">
-					No, Park U!
+				<div class="app_name">
+					<div id="app_name">
+			  			Park U
+			  		</div>
+					<div id="slogan">
+						No, Park U!
+					</div>
 				</div>
 				<div class="border">
 					<div class="wrap center"> <!-- Just to center ver and hor -->
-						<div class="wrap-label">
-							<label for="name"></label>
-							<p class="iconicfill-pen-alt2"></p>
-						</div>
+
 						<input type="text" placeholder="@ucsd.edu" id="name" ><br>
 						<input type="password" placeholder="Password" id="name"><br>
 						<!-- <div class="signin"> -->
-							<button type="submit" onclick="location.href='home.html';" style="text-align: center;">Sign in</button>
-						<!-- </div> -->
+						<button type="submit" onclick="location.href='home.html';" style="text-align: center;">Sign in</button>
+
+						<!-- Lines aren't appearing on new lines -->
+						<!--<a id="new_user" href="">new?</a>
+						<a id="guest_login" href="">guest</a>-->
+
+
 					</div>
 				</div>
 			</div>
-			
-			<!-- Time for multiple clouds to dance around -->
 			<div class="car_top2"></div>
 			<div class="car x2"></div>
 			<div class="car_top3 x3"></div>
@@ -51,7 +53,7 @@
 			<div class="car_top5"></div>
 			<div class="car x5"></div>
 		</div>
-		<script src="js/pen.js"></script>
+		<script src="static/js/pen.js"></script>
 
 	</body>
 </html>
