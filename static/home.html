@@ -1,7 +1,7 @@
 <!doctype html>
 
 <html>
-  <head>
+<head>
     <title>ParkU</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,16 +17,20 @@
     <!-- DropDown -->
     <link rel="stylesheet" href="css/style.css">
     
+    <!-- Alert -->
+    <link rel="stylesheet" type="text/css" href="sweetalert/dist/sweetalert.css">
+
     <!-- Webpage Logo -->
     <link rel="shortcut icon" href="images/favicon.ico">
 
-  </head>
-  <body>
+</head>
+<body>
     <div class="wrapper">
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
+                    <img alt="ParkU" src="images/car.jpg" href="home.html">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
@@ -35,78 +39,76 @@
                     </button>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="#">Page 2</a></li>
-                    <li><a href="doc.html">Documentation</a></li>
-                    <li><a href="index.html">Sign out</a></li>
-                </ul>
-
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="">
-                            <img alt="ParkU" src="images/car.jpg" href="home.html">
-                        </a>
-                    </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="doc.html">Documentation</a></li>
+                        <li><a href="index.html">Sign out</a></li>
+                    </ul>
+                    <!-- /.navbar-collapse -->
                 </div>
-                <!-- /.navbar-collapse -->
+                <!-- /.container -->
+                </nav>
             </div>
-            <!-- /.container -->
-        </nav>
-        <div>
             <h1>Welcome user</h1>
             <div class="options">
-                <p>Current registered permits:&nbsp&nbspYou currently have none registered.</p><br><br><br>
+                <p><b>Current registered permits:</b>&nbsp&nbspYou currently have none registered.</p><br><br><br>
                 <p class="custom_option">To purchase a permit complete the list below.</p><br>
-                <div class="drop">
-                    <p>Select a spot type:&nbsp&nbsp</p>
-                    <ul>
-                        <li class="dropdown">
-                        <a href="#" data-toggle="dropdown">Spot Type<i class="icon-arrow"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Visitor (V)</a></li>
-                                <li><a href="#">Visitor Premium (VP)</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p>Select a time limit:</p>
-                    <ul>
-                        <li class="dropdown">
-                            <a href="#" data-toggle="dropdown">Time Limit<i class="icon-arrow"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">1 hour</a></li>
-                                <li><a href="#">2 hours</a></li>
-                                <li><a href="#">4 hours</a></li>
-                                <li><a href="#">8 hours</a></li>
-                                <li><a href="#">All day</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p>Select your vehicle:&nbsp&nbsp</p>
-                    <ul>
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown">Vehicle<i class="icon-arrow"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">911 Porsche GT3 RS (License: L0LD3BT)</a></li>
-                            <li><a href="#">McLaren P1 (License: WH0T-M9)</a></li>
-                            <li><a href="#">Audi R8 (License: XCUS3M3)</a></li>
-                        </ul>
-                    </li>
-                    </ul>
-                </div>
-            <button type="submit" style="text-align: center;">Purchase</button>    
+
+                <section class="main clearfix">              
+                    <h3>Select a spot type:</h3>
+                    <select id="cd-dropdown" name="cd-dropdown" class="cd-select is-hidden">
+                        <option value="-1" selected>Spot Type</option>
+                        <option value="1">Visitor (V)</option>
+                        <option value="2">Visitor Premium (VP)</option>
+                    </select>
+                    <h3>Select a time limit:</h3>
+                    <select id="cd-dropdown2" name="cd-dropdown2" class="cd-select is-hidden">
+                        <option value="-1" selected>Time Limit</option>
+                        <option value="1">1 hour</option>
+                        <option value="2">2 hours</option>
+                        <option value="3">4 hours</option>
+                        <option value="4">8 hours</option>
+                        <option value="5">All Day</option>
+                    </select>
+                    <h3>Select your vehicle:</h3>
+                    <select id="cd-dropdown" name="cd-dropdown" class="cd-select is-hidden">
+                        <option value="-1" selected>Vehicle</option>
+                        <option value="1">911 Porsche GT3 RS (License: L0LD3BT)</option>
+                        <option value="2">McLaren P1 (License: WH0T-M9)</option>
+                        <option value="3">Audi R8 (License: XCUS3M3)</option>
+                    </select>
+                </section>
+
+                <button type="submit" class="confirmation">Purchase</button>    
             </div>
-            
-        </div>
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>
+
         
-        <!-- Dropdown -->
-        <script src="js/index.js"></script>
-        
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
     </div>
-  </body>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Dropdown -->
+    <script src="js/index.js"></script>
+
+    <!-- Purchase pop up -->
+    <script src="js/confirmation.js"></script>
+    <script src="sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Dropdown -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dropdown.js"></script>
+    <script src="js/modernizr.custom.63321.js"></script>
+
+    <script type="text/javascript">
+    $( function() {
+        $( '#cd-dropdown' ).dropdown( {
+            gutter : 5
+        } );
+    });
+    </script>
+</body>
 </html>
