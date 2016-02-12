@@ -10,9 +10,9 @@ function prompt(confirm){
 		type: "warning",   
 		showCancelButton: true,   
 		confirmButtonColor: "#DD6B55",   
-		confirmButtonText: "Confirm",   
-		cancelButtonText: "Decline",   
-		closeOnConfirm: false,   
+		confirmButtonText: "Confirm",
+		cancelButtonText: "Decline",
+		closeOnConfirm: false,
 		closeOnCancel: false,
 		allowOutsideClick: false 
 	}, function(isConfirm){   
@@ -21,17 +21,21 @@ function prompt(confirm){
 				title: "Choose a payment method",   
 				text: "",   
 				type: "input",   
-				showCancelButton: true,   
+				showCancelButton: true,
+				confirmButtonColor: "#DD6B55",   
+				cancelButtonText: "Cancel",   
 				closeOnConfirm: false,   
 				animation: "slide-from-top",   
 				inputPlaceholder: "Write something"	 }, 
-				function(inputValue){   
-					if (inputValue === false) return false;      
-					if (inputValue === "") {     
-						swal.showInputError("You need to write something!");     
-						return false   
-					}      
-					swal("Confirmed!", "Transaction was processed!", "success");   
+				function(inputValue){
+					if(isConfirm){
+						if (inputValue === false) return false;
+						if (inputValue === "") {     
+							swal.showInputError("You need to write something!");     
+							return false   
+						}      
+						swal("Confirmed!", "Transaction was processed!", "success");
+					}
 				});
 		} 
 		else {     

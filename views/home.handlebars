@@ -52,8 +52,8 @@
         </nav>
         <h1>Welcome user</h1>
         <div class="options">
-            <p><b>Current registered permits:</b>&nbsp&nbspYou currently have none registered.</p><br><br><br>
-            <p class="custom_option">To purchase a permit complete the list below.</p><br>
+            <p><b>Current registered permits:</b>&nbsp&nbspYou currently have none registered.</p><br>
+            <p class="custom_option">To purchase a permit complete the list below.</p>
             <section class="main clearfix">              
                 <h3>Select a spot type:</h3>
                 <select id="cd-dropdown" name="cd-dropdown" class="cd-select is-hidden">
@@ -61,24 +61,26 @@
                     <option value="1">Visitor (V)</option>
                     <option value="2">Visitor Premium (VP)</option>
                 </select>
+
                 <h3>Select a time limit:</h3>
-                <select id="cd-dropdown2" name="cd-dropdown2" class="cd-select is-hidden">
-                    <option value="-1" selected>Time Limit</option>
+                <select id="cd-dropdown2" name="cd-dropdown" class="cd-select is-hidden">
+                    <option style="z-index: 1030;" class="secondDrop" value="-1" selected>Time Limit</option>
                     <option value="1">1 hour</option>
                     <option value="2">2 hours</option>
                     <option value="3">4 hours</option>
                     <option value="4">8 hours</option>
                     <option value="5">All Day</option>
                 </select>
+                
                 <h3>Select your vehicle:</h3>
-                <select id="cd-dropdown" name="cd-dropdown" class="cd-select is-hidden">
+                <select id="cd-dropdown3" name="cd-dropdown" class="cd-select is-hidden">
                     <option value="-1" selected>Vehicle</option>
-                    <option value="1">911 Porsche GT3 RS (License: L0LD3BT)</option>
-                    <option value="2">McLaren P1 (License: WH0T-M9)</option>
-                    <option value="3">Audi R8 (License: XCUS3M3)</option>
+                    <option value="1">911 Porsche <!-- GT3 RS (License: L0LD3BT) --></option>
+                    <option value="2">McLaren P1 <!-- (License: WH0T-M9) --></option>
+                    <option value="3">Audi R8 <!-- (License: XCUS3M3) --></option>
                 </select>
             </section>
-            <button type="submit" class="confirmation">Purchase</button>    
+            <button type="submit" class="confirmation">Purchase</button>
         </div>
     </div>
     <!-- jQuery -->
@@ -102,7 +104,13 @@
     <script type="text/javascript">
     $( function() {
         $( '#cd-dropdown' ).dropdown( {
-            gutter : 5
+            gutter : 0
+        } );
+        $( '#cd-dropdown2' ).dropdown( {
+            gutter : 0
+        } );
+        $( '#cd-dropdown3' ).dropdown( {
+            gutter : 0
         } );
     });
     </script>
