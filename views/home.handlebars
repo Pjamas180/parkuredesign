@@ -56,14 +56,13 @@
             <p class="custom_option">To purchase a permit complete the list below.</p>
             <section class="main clearfix">              
                 <h3>Select a spot type:</h3>
-                <select id="cd-dropdown" class="cd-select is-hidden">
+                <select id="cd-dropdown" name="cd-dropdown" class="cd-select is-hidden">
                     <option value="-1" selected>Spot Type</option>
                     <option value="1">Visitor (V)</option>
                     <option value="2">Visitor Premium (VP)</option>
                 </select>
 
                 <h3>Select a time limit:</h3>
-
                 <select id="cd-dropdown2" name="cd-dropdown" class="cd-select is-hidden">
                     <option value="-1" selected>Time Limit</option>
                     <option value="1">1 hour</option>
@@ -74,7 +73,7 @@
                 </select>
 
                 <h3>Select your vehicle:</h3>
-                <select id="cd-dropdown" class="cd-select is-hidden">
+                <select id="cd-dropdown3" name="cd-dropdown" class="cd-select is-hidden">
                     <option value="-1" selected>Vehicle</option>
                     {{#each vehicles}}
                         <option value="1">{{this}}</option>
