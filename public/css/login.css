@@ -4,6 +4,8 @@ body {
 	/*To hide the horizontal scroller appearing during the animation*/
 	overflow: hidden;
 }
+
+
 .login-form {
 	text-align: center;
 	margin-right: auto;
