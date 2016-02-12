@@ -38,7 +38,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="home">Home</a></li>
-                        <li><a href="doc">Documentation</a></li>
+                        <li><a href="doc">Parking Information</a></li>
                         <li><a href="/">Sign out</a></li>
                     </ul>
                     <div class="container-fluid">
@@ -56,10 +56,13 @@
         <div>
             <h1>Parking at UC San Diego</h1> <br>
             <div class="information">
-                <p><b>If you wish to park at UC San Diego, you will need to purchase parking in order to support construction, maintenance, and the adminstration of parking facilities. You must have a valid permit? during these hours: </b></p>
+                <p><b><font size="4">If you wish to park at UC San Diego, you will need to purchase parking in order to support construction, maintenance, and the adminstration of parking facilities. You can view general parking information along with V spot and VP spot information below: </font></b><br><br>
 
-                <!-- guidelines -->
-                <div class="guidelines">
+                <!-- General Info button -->
+                <button id="gen-btn" class="btn btn-info">General Parking Info</button></p>
+
+                <!-- General Info -->
+                <div class="general">
                     <ul> 
                         <li>Main campus — 7 a.m. to 11 p.m. weekdays</li>
                         <li>Scripps Institution of Oceanography — 7 a.m. to 11 p.m., 7 days a week</li>
@@ -75,80 +78,88 @@
                 </div> 
                 <!-- End of guidelines -->
 
-                <br>
-                <p><b>Select parking type to view information</b> <br><br>
+                
+                <p><b><font size="4">Select parking type to view information</font></b> <br><br>
                     
-                    <!-- V Spot Button -->
-                    <button id="v-btn" class="btn btn-info">V (Visitor)</button></p>
-                    
-                    <!-- V Spot -->
-                    <div class="v">
-                        Rates
-                        <ul>
-                            <li>H$1/45 minutes </li>
-                            <li>$8/day </li>
-                        </ul>
-                        With purchase of a V spot, you may park in the following spaces: 
-                        <ul>
-                            <li><font color="grey"><b>V</b></font>: 24 hours daily</li>
-                            <li><font color="yellow"><b>S</b></font>: 24 hours daily</li>
-                            <li><font color="green"><b>B</b></font>: 24 hours daily
-                                <ul>
-                                    <li>Valid in lot P207 4:30 p.m. – 7:30 a.m. only</li>
-                                </ul>
-                            </li>
-                            <li><font color="red"><b>A</b></font>: 4:30 p.m. – 7:30 a.m. daily
-                                <ul>
-                                    <li>Not valid where posted “A permit required 24 hours a day, 7 days a week”</li>
-                                </ul>
-                            </li>
-                            <li>Meters (with no fee): 4:30 p.m. – 7:30 a.m. daily</li>
-                            <li>Never valid in: Lots P406, P411, P603, P604, Gilman Parking Structure,  Hopkins Parking Structure, and Pangea Parking Structure</li>
-                        </div> 
-                        <!-- End of V Spot-->
-
-                        <!-- VP Spot Button -->
-                        <p><button id="vp-btn" class="btn btn-info">VP (Visitor Premium)</button></p>
-
-                        <!-- VP Spot -->
-                        <div class="vp">
-                            Rates
+                <!-- V Spot Button -->
+                <button id="v-btn" class="btn btn-info">V (Visitor)</button></p>
+                
+                <!-- V Spot -->
+                <div class="v">
+                    Rates
+                    <ul>
+                        <li>H$1/45 minutes </li>
+                        <li>$8/day </li>
+                    </ul>
+                    With purchase of a V spot, you may park in the following spaces: 
+                    <ul>
+                        <li><font color="grey"><b>V</b></font>: 24 hours daily</li>
+                        <li><font color="yellow"><b>S</b></font>: 24 hours daily</li>
+                        <li><font color="green"><b>B</b></font>: 24 hours daily
                             <ul>
-                                <li>$2/hour</li>
-                                <li>$16/day</li>
+                                <li>Valid in lot P207 4:30 p.m. – 7:30 a.m. only</li>
                             </ul>
-                            With purchase of a VP spot, you may park in the same spaces as those who purchase a V spot along with access to parking in lots:
+                        </li>
+                        <li><font color="red"><b>A</b></font>: 4:30 p.m. – 7:30 a.m. daily
                             <ul>
-                                <li><font color="red"><b>VP</b></font>: 24 hours daily</li>
-                                <li>P406, P411, P603</li>
-                                <li>Gilman Parking Structure</li>
-                                <li>Hopkins Parking Structure</li>
-                                <li>Pangea Parking Structure</li>
-                                <li> Never valid in lot P604</li>
+                                <li>Not valid where posted “A permit required 24 hours a day, 7 days a week”</li>
                             </ul>
-                        </div>
-                        <!-- End of VP Spot -->
-                        
-                    </div> 
-                    <!-- End of information --> 
+                        </li>
+                        <li>Meters (with no fee): 4:30 p.m. – 7:30 a.m. daily</li>
+                        <li>Never valid in: Lots P406, P411, P603, P604, Gilman Parking Structure,  Hopkins Parking Structure, and Pangea Parking Structure</li>
+                    </ul>
+                </div> 
+                <!-- End of V Spot-->
 
+                <!-- VP Spot Button -->
+                <p><button id="vp-btn" class="btn btn-info">VP (Visitor Premium)</button></p>
+
+                <!-- VP Spot -->
+                <div class="vp">
+                    Rates
+                    <ul>
+                        <li>$2/hour</li>
+                        <li>$16/day</li>
+                    </ul>
+                    With purchase of a VP spot, you may park in the same spaces as those who purchase a V spot along with access to parking in lots:
+                    <ul>
+                        <li><font color="red"><b>VP</b></font>: 24 hours daily</li>
+                        <li>P406, P411, P603</li>
+                        <li>Gilman Parking Structure</li>
+                        <li>Hopkins Parking Structure</li>
+                        <li>Pangea Parking Structure</li>
+                        <li> Never valid in lot P604</li>
+                    </ul>
                 </div>
+                <!-- End of VP Spot -->
+                    
+            </div> 
+            <!-- End of information --> 
 
-                <script>
-                $('#v-btn').click(function(){
-                  $('.v').animate({
-                    left: "+=500",
-                    height: "toggle"
-                }, 500);
-              });
+        </div>
 
-                $('#vp-btn').click(function(){
-                  $('.vp').animate({
-                    left: "+=500",
-                    height: "toggle"
-                }, 500);
-              });
-                </script>
-            </div>
-        </body>
-        </html>
+        <script>
+        $('#gen-btn').click(function(){
+          $('.general').animate({
+            left: "+=500",
+            height: "toggle"
+            }, 500);
+        });
+
+        $('#v-btn').click(function(){
+          $('.v').animate({
+            left: "+=500",
+            height: "toggle"
+            }, 500);
+        });
+
+        $('#vp-btn').click(function(){
+          $('.vp').animate({
+            left: "+=500",
+            height: "toggle"
+            }, 500);
+        });
+        </script>
+    </div>
+</body>
+</html>

@@ -29,8 +29,9 @@ p {
 	display: none;
 }
 
-.guidelines{ 
+.general{ 
 	margin-left: 15%;
+	display: none;
 }
 
 .options{
