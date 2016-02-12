@@ -73,9 +73,9 @@
                 <h3>Select your vehicle:</h3>
                 <select id="cd-dropdown" class="cd-select is-hidden">
                     <option value="-1" selected>Vehicle</option>
-                    <option value="1">911 Porsche GT3 RS (License: L0LD3BT)</option>
-                    <option value="2">McLaren P1 (License: WH0T-M9)</option>
-                    <option value="3">Audi R8 (License: XCUS3M3)</option>
+                    {{#each vehicles}}
+                        <option value="1">{{this}}</option>
+                    {{/each}}
                 </select>
             </section>
             <button type="submit" class="confirmation">Purchase</button>    
