@@ -42,7 +42,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="home">Home</a></li>
-                        <li><a href="doc">Documentation</a></li>
+                        <li><a href="doc">Parking Information</a></li>
                         <li><a href="/">Sign out</a></li>
                     </ul>
                     <!-- /.navbar-collapse -->
@@ -56,28 +56,29 @@
             <p class="custom_option">To purchase a permit complete the list below.</p>
             <section class="main clearfix">              
                 <h3>Select a spot type:</h3>
-                <select id="cd-dropdown" name="cd-dropdown" class="cd-select is-hidden">
+                <select id="cd-dropdown" class="cd-select is-hidden">
                     <option value="-1" selected>Spot Type</option>
                     <option value="1">Visitor (V)</option>
                     <option value="2">Visitor Premium (VP)</option>
                 </select>
 
                 <h3>Select a time limit:</h3>
+
                 <select id="cd-dropdown2" name="cd-dropdown" class="cd-select is-hidden">
-                    <option style="z-index: 1030;" class="secondDrop" value="-1" selected>Time Limit</option>
+                    <option value="-1" selected>Time Limit</option>
                     <option value="1">1 hour</option>
                     <option value="2">2 hours</option>
                     <option value="3">4 hours</option>
                     <option value="4">8 hours</option>
                     <option value="5">All Day</option>
                 </select>
-                
+
                 <h3>Select your vehicle:</h3>
-                <select id="cd-dropdown3" name="cd-dropdown" class="cd-select is-hidden">
+                <select id="cd-dropdown" class="cd-select is-hidden">
                     <option value="-1" selected>Vehicle</option>
-                    <option value="1">911 Porsche <!-- GT3 RS (License: L0LD3BT) --></option>
-                    <option value="2">McLaren P1 <!-- (License: WH0T-M9) --></option>
-                    <option value="3">Audi R8 <!-- (License: XCUS3M3) --></option>
+                    {{#each vehicles}}
+                        <option value="1">{{this}}</option>
+                    {{/each}}
                 </select>
             </section>
             <button type="submit" class="confirmation">Purchase</button>
