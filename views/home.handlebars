@@ -13,7 +13,10 @@
     
     <!-- Custom CSS -->
     <link href="css/logo-nav.css" rel="stylesheet">
-    
+
+    <!-- Navbar CSS -->
+    <link href="css/navbar.css" rel="stylesheet">
+
     <!-- DropDown -->
     <link rel="stylesheet" href="css/style.css">
     
@@ -40,14 +43,14 @@
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="home">Home</a></li>
+                    <ul class="nav navbar-nav navbar-right" id="nav">
+                        <li><a href="home" class="active">Home</a></li>
                         <li><a href="doc">Parking Information</a></li>
                         <li><a href="/">Sign out</a></li>
                     </ul>
-                    <!-- /.navbar-collapse -->
-                    <!-- /.container -->
+                <!-- /.navbar-collapse -->
                 </div>
+            <!-- /.container -->
             </div>
         </nav>
         <h1>Welcome user</h1>
@@ -101,6 +104,7 @@
     <script type="text/javascript" src="js/jquery.dropdown.js"></script>
     <script src="js/modernizr.custom.63321.js"></script>
 
+    <!-- Dropdown -->
     <script type="text/javascript">
     $( function() {
         $( '#cd-dropdown' ).dropdown( {

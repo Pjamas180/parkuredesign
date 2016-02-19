@@ -3,7 +3,9 @@
 body {
 	/*To hide the horizontal scroller appearing during the animation*/
 	overflow: hidden;
+	 
 }
+
 .login-form {
 	text-align: center;
 	margin-right: auto;
@@ -29,8 +31,8 @@ input {
 }
 
 #center {
-  width: 640px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   position: inherit;
   top:-50px;
   bottom: 0;
@@ -260,14 +262,14 @@ input {
 }
 
 @-webkit-keyframes moveclouds {
-	0% {margin-left: 100%;}
-	100% {margin-left: -100%;}
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
 }
 @-moz-keyframes moveclouds {
-	0% {margin-left: 100%;}
-	100% {margin-left: -100%;}
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
 }
 @-o-keyframes moveclouds {
-	0% {margin-left: 100%;}
-	100% {margin-left: -100%;}
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
 }
