@@ -4,7 +4,7 @@
     <title>ParkU</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -17,6 +17,9 @@
 
     <!-- Custom CSS -->
     <link href="css/logo-nav.css" rel="stylesheet">
+
+    <!-- Navbar CSS -->
+    <link href="css/navbar.css" rel="stylesheet">
 </head>
 <body>
     <div class="wrapper">
@@ -24,36 +27,26 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
+                    <img alt="ParkU" src="images/car.jpg" href="home.html">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <!--<a class="navbar-brand" href="#">
-                        <img src="http://placehold.it/150x50&text=Logo" alt="">
-                    </a> -->
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" id="nav">
                         <li><a href="home">Home</a></li>
-                        <li><a href="doc">Parking Information</a></li>
+                        <li><a href="doc" class="active">Parking Information</a></li>
                         <li><a href="/">Sign out</a></li>
                     </ul>
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <a class="navbar-brand" href="">
-                                <img alt="ParkU" src="images/car.jpg" href="home.html">
-                            </a>
-                        </div>
-                    </div>
+                <!-- /.navbar-collapse -->                    
                 </div>                
-                <!-- /.navbar-collapse -->
-            </div>
             <!-- /.container -->
+            </div>
         </nav>
-        <div>
             <h1>Parking at UC San Diego</h1> <br>
             <div class="information">
                 <p><b><font size="4">If you wish to park at UC San Diego, you will need to purchase parking in order to support construction, maintenance, and the adminstration of parking facilities. You can view general parking information along with V spot and VP spot information below: </font></b><br><br>
@@ -78,7 +71,6 @@
                 </div> 
                 <!-- End of guidelines -->
 
-                
                 <p><b><font size="4">Select parking type to view information</font></b> <br><br>
                     
                 <!-- V Spot Button -->
@@ -130,36 +122,33 @@
                         <li>Pangea Parking Structure</li>
                         <li> Never valid in lot P604</li>
                     </ul>
+                <!-- End of VP Spot -->                    
                 </div>
-                <!-- End of VP Spot -->
-                    
-            </div> 
             <!-- End of information --> 
-
-        </div>
-
-        <script>
-        $('#gen-btn').click(function(){
-          $('.general').animate({
-            left: "+=500",
-            height: "toggle"
-            }, 500);
-        });
-
-        $('#v-btn').click(function(){
-          $('.v').animate({
-            left: "+=500",
-            height: "toggle"
-            }, 500);
-        });
-
-        $('#vp-btn').click(function(){
-          $('.vp').animate({
-            left: "+=500",
-            height: "toggle"
-            }, 500);
-        });
-        </script>
+            </div>
+    <!-- End of Wrapper -->
     </div>
+    <script>
+    $('#gen-btn').click(function(){
+      $('.general').animate({
+        left: "+=500",
+        height: "toggle"
+        }, 500);
+    });
+
+    $('#v-btn').click(function(){
+      $('.v').animate({
+        left: "+=500",
+        height: "toggle"
+        }, 500);
+    });
+
+    $('#vp-btn').click(function(){
+      $('.vp').animate({
+        left: "+=500",
+        height: "toggle"
+        }, 500);
+    });
+    </script>
 </body>
 </html>

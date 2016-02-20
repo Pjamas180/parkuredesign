@@ -1,8 +1,9 @@
 html, body{
 	height: 100%;
-	background: -webkit-linear-gradient(top, #c9dbe9 100%, #fff 100%);
+	background-color: white;
+/*	background: -webkit-linear-gradient(top, #c9dbe9 100%, #fff 100%);
 	background: -linear-gradient(top, #c9dbe9 100%, #fff 100%);
-	background: -moz-linear-gradient(top, #c9dbe9 100%, #fff 100%);
+	background: -moz-linear-gradient(top, #c9dbe9 100%, #fff 100%);*/
 }
 
 h1{
@@ -12,6 +13,7 @@ h1{
 
 .options{
 	text-align: center;
+	padding-bottom: 20%;
 }
 
 p{
