@@ -1,4 +1,9 @@
+var route = require('./route');
+
 exports.view = function(req, res) {
-	console.log("Viewing doc file");
-	res.render('doc');
+	if(!req.isAuthenticated()) {
+		route.notFound404(req, res, next);
+	} else {
+		res.render('doc');
+	}
 }

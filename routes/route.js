@@ -8,7 +8,6 @@ var Model = require('../model');
 
 // index
 var home = function(req, res, next) {
-	console.log("isAuthenticated in index: " + req.isAuthenticated());
 	if(!req.isAuthenticated()) {
 		res.redirect('/');
 	} else {
@@ -24,9 +23,7 @@ var home = function(req, res, next) {
 // sign in
 // GET
 var signIn = function(req, res, next) {
-	console.log("isAuthenticated in signIn: " + req.isAuthenticated());
 	if(req.isAuthenticated()) {
-		console.log("sign in get");
 		res.redirect('/home');
 	}
 	res.render('index');
@@ -35,10 +32,8 @@ var signIn = function(req, res, next) {
 // sign in
 // POST
 var signInPost = function(req, res, next) {
-	console.log("In signInPost");
 	passport.authenticate('local', { successRedirect: '/home',
 		failureRedirect: '/'}, function(err, user, info) {
-
 			if(err) {
 				return res.render('index');
 			} 
@@ -46,16 +41,12 @@ var signInPost = function(req, res, next) {
 			if(!user) {
 				return res.render('index');
 			}
-			console.log(user);
 			//	res.redirect('/home');
 			req.logIn(user, function(err) {
 				//return res.redirect('/home');
-				console.log("in here???");
 				if(err) {
-					console.log("signInPost err");
 					return res.render('index');
 				} else {
-					console.log("signInPost not err");
 					return res.redirect('/home');
 				}
 			});
@@ -65,7 +56,6 @@ var signInPost = function(req, res, next) {
 // sign up
 // GET
 var signUp = function(req, res, next) {
-	console.log("isAuthenticated in signUp: " + req.isAuthenticated());
 	if(req.isAuthenticated()) {
 		res.redirect('/home');
 	} else {
@@ -76,7 +66,6 @@ var signUp = function(req, res, next) {
 // sign up
 // POST
 var signUpPost = function(req, res, next) {
-	console.log("in signUpPost");
 	var user = req.body;
 	var usernamePromise = null;
 	usernamePromise = new Model.User({username: user.username}).fetch();
@@ -111,6 +100,14 @@ var signOut = function(req, res, next) {
 	}
 };
 
+var doc = function(req, res, next) {
+	if(!req.isAuthenticated()) {
+		notFound404(req, res, next);
+	} else {
+		res.render('doc');
+	}
+}
+
 // 404 not found
 var notFound404 = function(req, res, next) {
 	res.status(404);
@@ -137,7 +134,7 @@ module.exports.signOut = signOut;
 // 404 not found
 module.exports.notFound404 = notFound404;
 
-
+module.exports.doc = doc;
 
 
 

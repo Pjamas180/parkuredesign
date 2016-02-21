@@ -95,11 +95,11 @@ app.get('/signup', route.signUp);
 app.post('/signup', route.signUpPost);
 
 app.get('/home', route.home);
-app.get('/doc', doc.view);
+app.get('/doc', route.doc);
 //app.post('/login', login.verifyUser);
 
 
-//app.get('/signout', route.signOut);
+app.get('/signout', route.signOut);
 
 // app.get('/project/:name', project.viewProject);
 // Example route
