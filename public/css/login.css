@@ -35,7 +35,7 @@ input {
   width: 50%;
   /*height: 50%;*/
   position: relative;
-  margin:auto;
+  /*margin:auto;*/
   text-align: center;
   z-index: 3;
 } 
@@ -52,11 +52,11 @@ input {
 
 #slogan {
 	margin:auto;
-	height:100px;
+	height:50px;
 }
 
 .border{
-	padding-top: 12%;
+	/*padding-top: 12%;*/
 	/*position: absolute;*/
 	z-index: 3;
 }

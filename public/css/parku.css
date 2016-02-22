@@ -1,10 +1,5 @@
-*{ margin: 0; padding: 0;}
+/**{ margin: 0; padding: 0;}*/
 
-body {
-	/*To hide the horizontal scroller appearing during the animation*/
-	overflow: hidden;
-	 
-}
 
 .login-form {
 	text-align: center;
@@ -18,17 +13,6 @@ input {
     -moz-border-radius: 3px; //For Mozilla, etc.
     border-radius: 3px; //CSS3 Feature
 }
-.border button{
-	
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
- 
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
 
 #center {
   width: 100%;
@@ -38,14 +22,12 @@ input {
   bottom: 0;
   left: 50px;
   right: 0;
-  margin: auto;
+  /*margin: auto;*/
   text-align: center;
 }
 
 #app_name {
   font-size: 4em;
-  /* Border is a shadow */
-  /*text-shadow: 0px 0px 20px #000;*/
 
   /* Solid border */
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
@@ -55,7 +37,6 @@ input {
 #slogan {
   font-size:2em;
   /* Border is a shadow */
-  /*text-shadow: 0px 0px 20px #000;*/
 
   /* Solid border */
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
@@ -63,8 +44,8 @@ input {
 }
 
 #clouds{
-	padding: 100px 0;
-	background: #c9dbe9;
+/*	padding: 100px 0;*/
+/*	background: #c9dbe9;*/
 	background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
 	background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
 	background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
@@ -83,11 +64,9 @@ input {
 }
 
 .car:before, .car:after {
-	content: '';
 	position: absolute; 
-	background: #000;
-	width: 50px; height: 50px;
-	position: absolute; top: 20px; left: 25px;
+	top: 20px; 
+	left: 25px;
 	
 	border-radius: 100px;
 	-moz-border-radius: 100px;
@@ -99,14 +78,31 @@ input {
 }
 
 .car:after {
-	width: 50px; height: 50px;
-	top: 20px; left: auto; right: 20px;
+	width: 50px; 
+	height: 50px;
+	top: 20px; 
+	left: auto; 
+	right: 20px;
 }
 
 .car_top1 {
-	left:72px;
-	top:35px;
-	width: 100px; height: 60px;
+	width: 100px; 
+	height: 60px;
+	background: #bbf;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	
+	position: relative;
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+}
+
+.car_top2 {
+	width: 65px;
+	height: 40px;
 	background: #bbf;
 	
 	border-radius: 100px;
@@ -114,16 +110,14 @@ input {
 	-webkit-border-radius: 100px;
 	
 	position: relative; 
-	
-	-webkit-animation: moveclouds 15s linear infinite;
-	-moz-animation: moveclouds 15s linear infinite;
-	-o-animation: moveclouds 15s linear infinite;
+	-webkit-animation: moveclouds 17s linear infinite;
+	-moz-animation: moveclouds 17s linear infinite;
+	-o-animation: moveclouds 17s linear infinite;
 }
 
-.car_top2 {
-	left:280px;
-	top:39px;
-	width: 65px; height: 40px;
+.car_top3 {
+	width: 100px; 
+	height: 60px;
 	background: #bbf;
 	
 	border-radius: 100px;
@@ -136,26 +130,9 @@ input {
 	-o-animation: moveclouds 25s linear infinite;
 }
 
-.car_top3 {
-	left:80px;
-	top:43px;
-	width: 100px; height: 60px;
-	background: #bbf;
-	
-	border-radius: 100px;
-	-moz-border-radius: 100px;
-	-webkit-border-radius: 100px;
-	
-	position: relative; 
-	-webkit-animation: moveclouds 20s linear infinite;
-	-moz-animation: moveclouds 20s linear infinite;
-	-o-animation: moveclouds 20s linear infinite;
-}
-
 .car_top4 {
-	left:72px;
-	top:43px;
-	width: 100px; height: 60px;
+	width: 100px; 
+	height: 60px;
 	background: #bbf;
 	
 	border-radius: 100px;
@@ -169,37 +146,20 @@ input {
 }
 
 .car_top5 {
-	left:-80px;
-	top:-110px;
-	width: 100px; height: 60px;
+	width: 100px; 
+	height: 60px;
 	background: #bbf;
 	
 	border-radius: 100px;
 	-moz-border-radius: 100px;
 	-webkit-border-radius: 100px;
-	position: relative; 
 	
-	-webkit-transform: scale(0.8);
-	-moz-transform: scale(0.8);
-	transform: scale(0.8);
+	position: relative; 
 	-webkit-animation: moveclouds 20s linear infinite;
 	-moz-animation: moveclouds 20s linear infinite;
 	-o-animation: moveclouds 20s linear infinite;
 }
-.border{
-	padding-top: 12%;
-}
 
-
-.app_name {
-	position: center;
-	width: 48px;
-	border: solid;
-	border-width:5px;
-}
-
-
-/*Time to animate*/
 .x1 {
 	-webkit-animation: moveclouds 15s linear infinite;
 	-moz-animation: moveclouds 15s linear infinite;
@@ -208,68 +168,74 @@ input {
 
 /*variable speed, opacity, and position of cars for realistic effect*/
 .x2 {
-	left: 200px;
-	
-	-webkit-transform: scale(0.6);
-	-moz-transform: scale(0.6);
-	transform: scale(0.6);
-	//opacity: 0.7; /*opacity proportional to the size*/
-	
-	/*Speed will also be proportional to the size and opacity*/
 	/*More the speed. Less the time in 's' = seconds*/
+	-webkit-animation: moveclouds 17s linear infinite;
+	-moz-animation: moveclouds 17s linear infinite;
+	-o-animation: moveclouds 17s linear infinite;
+}
+
+.x3 {	
 	-webkit-animation: moveclouds 25s linear infinite;
 	-moz-animation: moveclouds 25s linear infinite;
 	-o-animation: moveclouds 25s linear infinite;
 }
 
-.x3 {
-	//left: -250px; //top: -200px;
-	
-	-webkit-transform: scale(0.8);
-	-moz-transform: scale(0.8);
-	transform: scale(0.8);
-	//opacity: 0.9; /*opacity proportional to the size*/
-	
-	-webkit-animation: moveclouds 20s linear infinite;
-	-moz-animation: moveclouds 20s linear infinite;
-	-o-animation: moveclouds 20s linear infinite;
-}
-
 .x4 {
-	//left: 470px; //top: -250px;
-	
-	-webkit-transform: scale(0.75);
-	-moz-transform: scale(0.75);
-	transform: scale(0.75);
-	//opacity: 0.85; /*opacity proportional to the size*/
-	
 	-webkit-animation: moveclouds 18s linear infinite;
 	-moz-animation: moveclouds 18s linear infinite;
 	-o-animation: moveclouds 18s linear infinite;
 }
 
-.x5 {
-	left: -150px; top: -150px;
-	
-	-webkit-transform: scale(0.8);
-	-moz-transform: scale(0.8);
-	transform: scale(0.8);
-	//opacity: 0.9; /*opacity proportional to the size*/
-	
+.x5 {	
 	-webkit-animation: moveclouds 20s linear infinite;
 	-moz-animation: moveclouds 20s linear infinite;
 	-o-animation: moveclouds 20s linear infinite;
 }
-
+/*
 @-webkit-keyframes moveclouds {
-	0% {margin-left: 1000px;}
-	100% {margin-left: -1000px;}
+	0% {margin-left: 100%;}
+	100% {margin-left: -400px;}
 }
 @-moz-keyframes moveclouds {
-	0% {margin-left: 1000px;}
-	100% {margin-left: -1000px;}
+	0% {margin-left: 100%;}
+	100% {margin-left: -400px;}
 }
 @-o-keyframes moveclouds {
-	0% {margin-left: 1000px;}
-	100% {margin-left: -1000px;}
+	0% {margin-left: 100%;}
+	100% {margin-left: -400px;}
+}*/
+@-webkit-keyframes moveclouds {
+	0% {margin-left: 100%;}
+	25% {background: yellow;}
+	50% {background: black;}
+	75% {background: green;}
+	100% {margin-left: -400px;}
 }
+@-moz-keyframes moveclouds {
+	0% {margin-left: 100%;}
+	25% {background: yellow;}
+	50% {background: black;}
+	75% {background: green;}
+	100% {margin-left: -400px;}
+}
+@-o-keyframes moveclouds {
+	0% {margin-left: 100%;}
+	25% {background: yellow;}
+	50% {background: black;}
+	75% {background: green;}
+	100% {margin-left: -400px;}
+}
+/*
+@keyframes moveclouds {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+
+#animate-area	{ 
+	width: 560px; 
+	height: 400px; 
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+
+	animation: moveclouds 10s linear infinite;
+}*/
