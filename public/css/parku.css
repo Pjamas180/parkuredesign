@@ -1,6 +1,3 @@
-/**{ margin: 0; padding: 0;}*/
-
-
 .login-form {
 	text-align: center;
 	margin-right: auto;
@@ -8,47 +5,22 @@
 	padding-top: 20px;
 }
 
-input {
-	-webkit-border-radius: 3px; //For Safari, etc.
-    -moz-border-radius: 3px; //For Mozilla, etc.
-    border-radius: 3px; //CSS3 Feature
-}
-
-#center {
-  width: 100%;
-  height: 100%;
-  position: inherit;
-  top:-50px;
-  bottom: 0;
-  left: 50px;
-  right: 0;
-  /*margin: auto;*/
-  text-align: center;
-}
-
-#app_name {
-  font-size: 4em;
-
-  /* Solid border */
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-
-}
-
-#slogan {
-  font-size:2em;
-  /* Border is a shadow */
-
-  /* Solid border */
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-
-}
-
 #clouds{
-/*	padding: 100px 0;*/
-/*	background: #c9dbe9;*/
+	margin-bottom: 10px;
+
 	background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
 	background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
 	background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+	/*background:
+		-webkit-linear-gradient(45deg, hsla(340, 100%, 55%, 1) 0%, hsla(340, 100%, 55%, 0) 70%),
+		-webkit-linear-gradient(315deg, hsla(225, 95%, 50%, 1) 10%, hsla(225, 95%, 50%, 0) 80%),
+		-webkit-linear-gradient(225deg, hsla(140, 90%, 50%, 1) 10%, hsla(140, 90%, 50%, 0) 80%),
+		-webkit-linear-gradient(135deg, hsla(35, 95%, 55%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
+	background:
+		linear-gradient(45deg, hsla(340, 100%, 55%, 1) 0%, hsla(340, 100%, 55%, 0) 70%),
+		linear-gradient(135deg, hsla(225, 95%, 50%, 1) 10%, hsla(225, 95%, 50%, 0) 80%),
+		linear-gradient(225deg, hsla(140, 90%, 50%, 1) 10%, hsla(140, 90%, 50%, 0) 80%),
+		linear-gradient(315deg, hsla(35, 95%, 55%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);*/
 }
 
 /*Time to finalise the cloud shape*/
@@ -64,9 +36,11 @@ input {
 }
 
 .car:before, .car:after {
-	position: absolute; 
-	top: 20px; 
-	left: 25px;
+	content: '';
+	position: absolute;
+	background: #000;
+	width: 50px; height: 50px;
+	position: absolute; top: 20px; left: 25px;
 	
 	border-radius: 100px;
 	-moz-border-radius: 100px;
@@ -86,6 +60,8 @@ input {
 }
 
 .car_top1 {
+	left:72px;
+	top:35px;
 	width: 100px; 
 	height: 60px;
 	background: #bbf;
@@ -101,6 +77,8 @@ input {
 }
 
 .car_top2 {
+	left:80px;
+	top:39px;
 	width: 65px;
 	height: 40px;
 	background: #bbf;
@@ -116,6 +94,8 @@ input {
 }
 
 .car_top3 {
+	left:80px;
+	top:43px;
 	width: 100px; 
 	height: 60px;
 	background: #bbf;
@@ -131,6 +111,8 @@ input {
 }
 
 .car_top4 {
+	left:72px;
+	top:43px;
 	width: 100px; 
 	height: 60px;
 	background: #bbf;
@@ -146,6 +128,8 @@ input {
 }
 
 .car_top5 {
+	left:70px;
+	top:40px;
 	width: 100px; 
 	height: 60px;
 	background: #bbf;
@@ -155,6 +139,10 @@ input {
 	-webkit-border-radius: 100px;
 	
 	position: relative; 
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+
 	-webkit-animation: moveclouds 20s linear infinite;
 	-moz-animation: moveclouds 20s linear infinite;
 	-o-animation: moveclouds 20s linear infinite;
@@ -168,25 +156,41 @@ input {
 
 /*variable speed, opacity, and position of cars for realistic effect*/
 .x2 {
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+
 	/*More the speed. Less the time in 's' = seconds*/
 	-webkit-animation: moveclouds 17s linear infinite;
 	-moz-animation: moveclouds 17s linear infinite;
 	-o-animation: moveclouds 17s linear infinite;
 }
 
-.x3 {	
+.x3 {
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+
 	-webkit-animation: moveclouds 25s linear infinite;
 	-moz-animation: moveclouds 25s linear infinite;
 	-o-animation: moveclouds 25s linear infinite;
 }
 
 .x4 {
+	-webkit-transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	transform: scale(0.75);
+
 	-webkit-animation: moveclouds 18s linear infinite;
 	-moz-animation: moveclouds 18s linear infinite;
 	-o-animation: moveclouds 18s linear infinite;
 }
 
-.x5 {	
+.x5 {
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+
 	-webkit-animation: moveclouds 20s linear infinite;
 	-moz-animation: moveclouds 20s linear infinite;
 	-o-animation: moveclouds 20s linear infinite;
