@@ -11,14 +11,15 @@ drop table if exists parking_lots;
 create table if not exists users (
 	userId integer primary key auto_increment,
 	username varchar(100) unique,
-	password varchar(100)
+	password varchar(100),
+	vehicle varchar(100)
 ) engine=innodb;
 
 create table if not exists vehicles (
 	vehicleId integer primary key auto_increment,
 	userId integer not null,
 	vehicleName varchar(100) not null,
-	licensePlateNumber varchar(100) not null,
+	licen	sePlateNumber varchar(100) not null,
 	foreign key (userId)
 		references users(userId)
 		on update cascade on delete restrict

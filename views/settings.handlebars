@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <title>ParkU</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/settings.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/logo-nav.css" rel="stylesheet">
+
+    <!-- Navbar CSS -->
+    <link href="css/navbar.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <img alt="ParkU" src="images/car.jpg" href="home.html">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right" id="nav">
+                        <li><a href="home">Home</a></li>
+                        <li><a href="doc">Parking Information</a></li>
+                        <li><a href="settings" class="active">Settings</a></li>
+                        <li><a href="/signout">Sign out</a></li>
+                    </ul>
+                <!-- /.navbar-collapse -->                    
+                </div>                
+            <!-- /.container -->
+            </div>
+        </nav>    
+
+
+
+        <h1>{{message}}</h1>
+        <form id="vehicleForm" action="settings" method="post">
+            <div>
+                <label for="vehicle">Vehicle: </label>
+                <input type="text" id="vehicle" name="vehicle"></input>
+            </div>
+        <input type="submit" value="Submit"></input>
+        </form>
+        
+    <!-- End of Wrapper -->
+    </div>
+    <script>
+
+
+    </script>
+</body>
+</html>
