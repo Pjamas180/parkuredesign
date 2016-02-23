@@ -29,11 +29,14 @@ $(document).ready(function () {
 function checkPasswordMatch() {
 	var password = $("#signup_password").val();
 	var confirmPassword = $("#signup_password_confirm").val();
+	var flag = false;
 
-	if (password != confirmPassword)
+	if (password !== confirmPassword)
 		$("#divCheckPasswordMatch").html("Passwords do not match!");
 	else if (password == "" && confirmPassword == "")
 		$("#divCheckPasswordMatch").html("");
-	else
+	else{
 		$("#divCheckPasswordMatch").html("Passwords match.");
+		var flag = true;
+	}
 }
