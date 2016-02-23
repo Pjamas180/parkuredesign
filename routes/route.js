@@ -11,12 +11,22 @@ var home = function(req, res, next) {
 	if(!req.isAuthenticated()) {
 		res.redirect('/');
 	} else {
-		var user = req.user;
+		
+  		var user = req.user;
+		var vehicle = req.body.vehicle;
+		var username = req.user.attributes.username;
+		//var vehicle = new Model.Vehicle({vehicleId: 'a'});
+		//console.log(req.newVehicle.get("vehicleName"));
+		//console.log(req.user.attributes);
+
+		//console.log(user.attributes);
+		//console.log(user.attributes.username);
 
 		if(user !== undefined) {
 			user = user.toJSON();
 		}
-		res.render('home');
+
+		res.render('home', {car: vehicle, message: username});
 	}
 };
 
@@ -67,6 +77,7 @@ var signUp = function(req, res, next) {
 // POST
 var signUpPost = function(req, res, next) {
 	var user = req.body;
+	console.log(user);
 	var usernamePromise = null;
 	usernamePromise = new Model.User({username: user.username}).fetch();
 
@@ -108,6 +119,22 @@ var doc = function(req, res, next) {
 	}
 }
 
+var settings = function(req, res, next) {
+	if(!req.isAuthenticated()) {
+		notFound404(req, res, next);
+	} else {
+		var user = req.user.body;
+		//console.log(user);
+		//req.user.set('vehicle', 'car');
+		//console.log(req.user.attributes);
+		//console.log(req.user.get("vehicle"));
+		var user = req.user.attributes.username;
+		res.render('settings', {message: user});
+	}
+}
+
+
+
 // 404 not found
 var notFound404 = function(req, res, next) {
 	res.status(404);
@@ -135,6 +162,9 @@ module.exports.signOut = signOut;
 module.exports.notFound404 = notFound404;
 
 module.exports.doc = doc;
+
+module.exports.settings = settings;
+
 
 
 
