@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/login.css" rel="stylesheet">
 	<link href="css/credentials.css" rel="stylesheet">
+	<link href="css/parku.css" rel="stylesheet">
 </head>
 <body>
 	<div id="clouds">
@@ -14,27 +15,43 @@
 		<div class="car x1"></div>
 		<div id="center">
 			<div class="app_name">
-				<div id="app_name">
-					Park U
-				</div>
-				<div id="slogan">
-					No, Park U!
-				</div>
+				<div id="app_name">Park U</div>
+				<div id="slogan">No, Park U!</div>
 			</div>
 			<div class="border">
-				<div class="wrap center"> <!-- Just to center ver and hor -->
+				<!-- Just to center ver and hor -->
+				<div class="wrap center"> 
 					<form action="/" method="post">
-						<input type="text" placeholder="@ucsd.edu" name="username" id="name" ><br>
-						<input type="password" placeholder="Password" name="password" id="password"><br>
-						<!-- <div class="signin"> -->
-						<button type="submit" style="text-align: center;">Sign in</button>
-						<!-- Lines aren't appearing on new lines -->
-							<!--<a id="new_user" href="">new?</a>
-							<a id="guest_login" href="">guest</a>-->
-						
+						<div id="firstInputs">
+							<input type="text" placeholder="@ucsd.edu" name="username" id="name" required>
+							<input type="password" placeholder="Password" name="password" id="password" required>
+						</div>
+						<!-- Sign in button type is temporarily button... should be "submit" -->
+						<button type="submit" id="signin">Sign in</button>
+						<button type="button" id="signup">Get Started</button>
 					</form>
 				</div>
-				<a href="/signup">Signup!</a>
+				<p id="register">Register a @ucsd.edu email and password.</p>
+				<div class="signup_view account login" id="signup_account">
+					<!-- This is the form for the new users -->
+					<form action="/signup" method="post">
+						<ul class="emailAlert" id="emailChecker"></ul>
+						<div class="form_row form_row_email">
+							<label for="signup_email"></label>
+							<input type="email" placeholder="@ucsd.edu" id="signup_email" name="username" data-required="required"/>
+						</div>
+						<div class="form_row form_row_password">
+							<label for="signup_password"></label>
+							<input type="password" placeholder="Password" id="signup_password" name="password" data-required="required"/>
+						</div>
+						<div class="form_row form_row_password">
+							<label for="signup_password"></label>
+							<input type="password" placeholder="Re-enter Password" id="signup_password_confirm" data-required="required"/>
+						</div>
+						<ul class="registrationFormAlert" id="divCheckPasswordMatch"></ul>
+						<button type="submit" id="create">Sign Up</button>
+					</form>
+				</div>
 			</div>
 			<div class="car_top2"></div>
 			<div class="car x2"></div>
@@ -45,8 +62,11 @@
 			<div class="car_top5"></div>
 			<div class="car x5"></div>
 		</div>
-	</body>
-	</html>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>
 
 
 

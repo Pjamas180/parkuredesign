@@ -1,6 +1,7 @@
 html, body{
 	height: 100%;
 	background-color: white;
+	overflow: hidden;
 /*	background: -webkit-linear-gradient(top, #c9dbe9 100%, #fff 100%);
 	background: -linear-gradient(top, #c9dbe9 100%, #fff 100%);
 	background: -moz-linear-gradient(top, #c9dbe9 100%, #fff 100%);*/
@@ -10,33 +11,32 @@ h1{
 	text-align: center;
 }
 
-p {
-	max-width: 70%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.btn-info{
-	background-color: #566E75;
-	border-color: #566E75;
-}
-
-.options{
-	font-size: 20px;
-	margin-left: 25%;
-	
-}
-.custom_option{
-	margin-left: 5%;
-}
-#footer{
-	height: 100%;
+#vehicleForm{
 	text-align: center;
-}
-.options button {
-	margin-left: 25%;
-	margin-right: 75%;
+	font-size: 1.3em;
 
+}
+#vehicle{
+	margin: auto;
+	display: block;
+	width: 200px;
+	padding: 15px 0px 15px 12px;
+	font-family: "Arvo";
+	/*font-weight: 400;*/
+	/*color: #377D6A;*/
+	background: rgba(0,0,0,0.3);
+	/*border: none;
+	outline: none;*/
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px  1px rgba(255,255,255,0.2);
+	transition: all .3s ease-in-out;
+	font-size: 13px;
+	z-index:4;
+}
+
+#submitButton {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
@@ -45,4 +45,5 @@ p {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin-top: 20px;
 }

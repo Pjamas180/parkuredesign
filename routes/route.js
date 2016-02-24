@@ -69,7 +69,7 @@ var signUp = function(req, res, next) {
 	if(req.isAuthenticated()) {
 		res.redirect('/home');
 	} else {
-		res.render('signup', {title: 'Sign Up'});
+		res.render('/');
 	}
 };
 
@@ -83,7 +83,7 @@ var signUpPost = function(req, res, next) {
 
 	return usernamePromise.then(function(model) {
 		if(model) {
-			res.render('signup', {title: 'signup', errorMessage: 'username already exists'});
+			res.render('/', {title: 'signup', errorMessage: 'username already exists'});
 		} else {
          //****************************************************//
          // MORE VALIDATION GOES HERE(E.G. PASSWORD VALIDATION)
