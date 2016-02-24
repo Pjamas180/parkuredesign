@@ -19,6 +19,7 @@ var home = require('./routes/home');
 var doc = require('./routes/doc');
 var login = require('./routes/login');
 var route = require('./routes/route');
+var settings = require('./routes/settings');
 var Model = require('./model');
 // Example route
 // var user = require('./routes/user');
@@ -94,12 +95,74 @@ app.get('/signup', route.signUp);
 // POST
 app.post('/signup', route.signUpPost);
 
+
+
 app.get('/home', route.home);
 app.get('/doc', route.doc);
+app.get('/settings', route.settings);
+
 //app.post('/login', login.verifyUser);
 
 
 app.get('/signout', route.signOut);
+
+
+// ******************* SETTING UP MYSQL ******************* //
+var mysql = require("mysql");
+
+  // First you need to create a connection to the db
+  var con = mysql.createConnection({
+    host: 'jw0ch9vofhcajqg7.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    user: 'hacd9bv6o2fyqb9a',
+    password: 'w5c6dw6vb9blc07b',
+    database: 'ifevrxznxvctquex'
+  });
+
+  con.connect(function(err){
+    if(err){
+      console.log('Error connecting to Db');
+      return;
+    }
+    console.log('Connection established');
+  });
+// ******************* SETTING UP MYSQL ******************* //
+
+app.post('/settings', function(req, res) {
+
+  // Get the current user ID
+  var userIden = req.user.get("userId");
+
+  // Get the inputted vehicle
+  var vehicleInput = req.body.vehicle;
+
+  // Used to insert into vehicles table
+  var vehicle = {userId: userIden, vehicleName: vehicleInput, licensePlateNumber: 'abc123'};
+  con.query('INSERT INTO vehicles SET ?', vehicle, function(err, res) {
+    if (err) throw err;
+
+    //console.log(res.insertId);
+  }); 
+
+  
+  // Query to check to see if new vehicle was inserted
+  con.query('SELECT * FROM vehicles', function(err, rows) {
+    if (err) throw err;
+
+
+    //console.log(rows);
+  });
+
+
+  //var newVehicle = new Model.Vehicle({userId: userIden, vehicleName: vehicleInput, licensePlateNumber: 'abc123'});
+  ///console.log(newVehicle.attributes);
+
+  
+
+  //console.log(req.body.vehicle);
+  //console.log(test);
+  route.home(req, res);
+  //console.log(req.user.attributes);
+});
 
 // app.get('/project/:name', project.viewProject);
 // Example route
