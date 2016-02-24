@@ -107,6 +107,7 @@ app.get('/settings', route.settings);
 app.get('/signout', route.signOut);
 
 
+
 // ******************* SETTING UP MYSQL ******************* //
 var mysql = require("mysql");
 
@@ -145,12 +146,12 @@ app.post('/settings', function(req, res) {
 
   
   // Query to check to see if new vehicle was inserted
-  con.query('SELECT * FROM vehicles', function(err, rows) {
+  /*con.query('SELECT * FROM vehicles', function(err, rows) {
     if (err) throw err;
 
 
     //console.log(rows);
-  });
+  });*/
 
 
   //var newVehicle = new Model.Vehicle({userId: userIden, vehicleName: vehicleInput, licensePlateNumber: 'abc123'});
@@ -164,6 +165,24 @@ app.post('/settings', function(req, res) {
   //console.log(req.user.attributes);
 });
 
+app.get('/vehicles', function(req, res) {
+    // Get session user.
+    var userIden = req.user.get("userId");
+    //console.log(userIden);
+    // Get all vehicles of the user.
+    con.query('SELECT vehicleId, vehicleName FROM vehicles WHERE userId = ?', userIden,
+        function(err, rows) {
+            if (err) throw err;
+            /*
+            console.log(rows.length);
+            for (i = 0; i < rows.length; i++ ) {
+                console.log(rows[i]);
+            }
+            */
+            res.json(rows);
+        }
+    );
+});
 // app.get('/project/:name', project.viewProject);
 // Example route
 // app.get('/users', user.list);
