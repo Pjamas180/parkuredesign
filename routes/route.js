@@ -8,26 +8,32 @@ var Model = require('../model');
 
 // index
 var home = function(req, res, next) {
-	if(!req.isAuthenticated()) {
-		res.redirect('/');
-	} else {
-		
-  		var user = req.user;
-		var vehicle = req.body.vehicle;
-		var username = req.user.attributes.username;
-		//var vehicle = new Model.Vehicle({vehicleId: 'a'});
-		//console.log(req.newVehicle.get("vehicleName"));
-		//console.log(req.user.attributes);
+  if(!req.isAuthenticated()) {
+    res.redirect('/');
+  } else {
 
-		//console.log(user.attributes);
-		//console.log(user.attributes.username);
+    // Get session user.
+      var userIden = req.user.get("userId");
+      var username = req.user.attributes.username;
+      // Get all vehicles of the user.
 
-		if(user !== undefined) {
-			user = user.toJSON();
-		}
+      con.query('SELECT vehicleId, vehicleName FROM vehicles WHERE userId = ?', userIden,
+          function(err, rows) {
+              if (err) throw err;
+              var homePageJSON = {
+                'car': [],
+                'message': username
+              };
 
-		res.render('home', {car: vehicle, message: username});
-	}
+              for (var i = 0; i < rows.length; i++) {
+                homePageJSON.car.push({
+                  'vehicleName' : rows[i].vehicleName
+                });
+              }
+              res.render('home', homePageJSON);
+          }
+      );
+  }
 };
 
 // sign in

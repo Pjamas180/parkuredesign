@@ -79,8 +79,9 @@
                 <h3>Select your vehicle:</h3>
                 <select id="cd-dropdown3" name="cd-dropdown" class="cd-select is-hidden vehicles">
                     <option value="-1" selected>Vehicle</option>
-                    
-                    <!-- <option value="1">{{car}}</option> -->
+                    {{#each car}}
+                    <option value="1">{{vehicleName}}</option>
+                    {{/each}}
                     
                 </select>
             </section>
@@ -119,9 +120,6 @@
         } );
     });
     </script>
-
-    <!-- Vehicles -->
-    <script type="text/javascript" src="js/vehicles.js"></script>
 
 </body>
 </html>

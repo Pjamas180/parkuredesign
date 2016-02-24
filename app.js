@@ -81,33 +81,6 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-// Add routes here
-//app.get('/', index.view);
-app.get('/home', route.home);
-
-app.get('/', route.signIn);
-app.post('/', route.signInPost);
-//app.get('/home', home.view);
-
-// signup
-// GET
-app.get('/signup', route.signUp);
-// POST
-app.post('/signup', route.signUpPost);
-
-
-
-app.get('/home', route.home);
-app.get('/doc', route.doc);
-app.get('/settings', route.settings);
-
-//app.post('/login', login.verifyUser);
-
-
-app.get('/signout', route.signOut);
-
-
-
 // ******************* SETTING UP MYSQL ******************* //
 var mysql = require("mysql");
 
@@ -128,6 +101,52 @@ var mysql = require("mysql");
   });
 // ******************* SETTING UP MYSQL ******************* //
 
+// Add routes here
+app.get('/home', function(req, res, next) {
+  if(!req.isAuthenticated()) {
+    res.redirect('/');
+  } else {
+
+    // Get session user.
+      var userIden = req.user.get("userId");
+      var username = req.user.attributes.username;
+      // Get all vehicles of the user.
+
+      con.query('SELECT vehicleId, vehicleName FROM vehicles WHERE userId = ?', userIden,
+          function(err, rows) {
+              if (err) throw err;
+              var homePageJSON = {
+                'car': [],
+                'message': username
+              };
+
+              for (var i = 0; i < rows.length; i++) {
+                homePageJSON.car.push({
+                  'vehicleName' : rows[i].vehicleName
+                });
+              }
+              res.render('home', homePageJSON);
+          }
+      );
+  }
+});
+
+app.get('/', route.signIn);
+app.post('/', route.signInPost);
+//app.get('/home', home.view);
+
+// signup
+// GET
+app.get('/signup', route.signUp);
+// POST
+app.post('/signup', route.signUpPost);
+
+app.get('/doc', route.doc);
+app.get('/settings', route.settings);
+
+
+app.get('/signout', route.signOut);
+
 app.post('/settings', function(req, res) {
 
   // Get the current user ID
@@ -144,25 +163,7 @@ app.post('/settings', function(req, res) {
     //console.log(res.insertId);
   }); 
 
-  
-  // Query to check to see if new vehicle was inserted
-  /*con.query('SELECT * FROM vehicles', function(err, rows) {
-    if (err) throw err;
-
-
-    //console.log(rows);
-  });*/
-
-
-  //var newVehicle = new Model.Vehicle({userId: userIden, vehicleName: vehicleInput, licensePlateNumber: 'abc123'});
-  ///console.log(newVehicle.attributes);
-
-  
-
-  //console.log(req.body.vehicle);
-  //console.log(test);
   route.home(req, res);
-  //console.log(req.user.attributes);
 });
 
 app.get('/vehicles', function(req, res) {
@@ -183,9 +184,6 @@ app.get('/vehicles', function(req, res) {
         }
     );
 });
-// app.get('/project/:name', project.viewProject);
-// Example route
-// app.get('/users', user.list);
 // 404 not found
 app.use(route.notFound404);
 
