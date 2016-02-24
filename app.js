@@ -163,7 +163,7 @@ app.post('/settings', function(req, res) {
     //console.log(res.insertId);
   }); 
 
-  route.home(req, res);
+  res.redirect('/home');
 });
 
 app.get('/vehicles', function(req, res) {
