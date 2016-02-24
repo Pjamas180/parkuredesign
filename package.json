@@ -3,31 +3,32 @@
   "description": "Eliminate the need to walk to the pay station",
   "version": "0.0.1",
   "author": "Pedro Villaroman, Abel Jara, Phong Tran",
-
   "repository": {
-  	"type": "git",
-  	"url": "https://github.com/Pjamas180/ParkU"
+    "type": "git",
+    "url": "https://github.com/Pjamas180/ParkU"
   },
   "license": "MIT",
-
   "main": "app.js",
   "private": true,
   "scripts": {
-      "start": "node app.js"
+    "start": "node app.js"
   },
   "dependencies": {
-    "express": "3.x",
-    "express3-handlebars": "*",
-    "body-parser": "*",
-    "cookie-parser": "*",
-    "express-session": "*",
     "bcrypt-nodejs": "*",
-    "passport": "*",
-    "passport-local": "*",
+    "body-parser": "*",
+    "bookshelf": "0.5",
+    "cookie-parser": "*",
+    "datatables.net": "^1.10.11",
+    "datatables.net-dt": "^1.10.11",
+    "express": "3.x",
+    "express-session": "*",
+    "express3-handlebars": "*",
+    "jquery": "^2.2.0",
     "mysql": "*",
-    "bookshelf": "0.5"
+    "passport": "*",
+    "passport-local": "*"
   },
   "engines": {
-  	"node": "0.10.x"
+    "node": "0.10.x"
   }
 }
