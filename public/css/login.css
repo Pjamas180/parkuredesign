@@ -68,6 +68,7 @@ input {
 #app_name {
 	font-size: 4em;
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	font-family: helvetica;
 }
 
 .border{
@@ -80,6 +81,7 @@ input {
 	height:37px;
 	font-size:2em;
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	font-family: helvetica;
 }
 
 .registrationFormAlert{
