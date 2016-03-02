@@ -1,5 +1,6 @@
 function initializePage() {
 	var loadDate = new Date();
+	console.log("login page is loaded");
 
 	$('#signup').click(function(event) {
 		console.log("signup clicked");
