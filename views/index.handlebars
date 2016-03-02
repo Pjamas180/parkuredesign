@@ -93,6 +93,14 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 			<div class="car x5"></div>
 		</div>
 	</div>
+	<script>
+		$('#signup').click(function(event) {
+			console.log("signup clicked");
+			var now = new Date();
+			var elapsed = now - loadDate;
+			ga('send', 'timing', 'signup', 'click', elapsed);
+		});
+	</script>
 	<script src="js/login2.js"></script>
 	{{> googleAnalytics}}
 </body>
