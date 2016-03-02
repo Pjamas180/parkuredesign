@@ -5,5 +5,5 @@ function initializePage() {
 		var now = new Date();
 		var elapsed = now - loadDate;
 		ga('send', 'timing', 'signup', 'click', elapsed);
-	}
+	});
 }
