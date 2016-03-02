@@ -1,9 +1,16 @@
+@font-face {
+   font-family: myFirstFont;
+   src: url(fonts/museosans-500.otf);
+}
+
 #nav li a {
     padding:12px;
     border-radius: 5px;
 }
 .navbar{
-	background-color: #5bc0de;
+    font-family: myFirstFont;
+	/*background-color: #5bc0de;*/
+    background-color: #586A6F;
 }
 .navbar body{
 	background: white;
@@ -14,8 +21,8 @@
 }	
 
 #nav li .active {
-    border-bottom:3px #FFF solid;
-    background-color: #FFF;
+    border-bottom:3px black solid;
+    background-color: #B8CFD6;
 }
 
 #nav li .focus{

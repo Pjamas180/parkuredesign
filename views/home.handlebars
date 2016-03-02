@@ -20,12 +20,12 @@
     <!-- DropDown -->
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- Alert -->
-    <link rel="stylesheet" type="text/css" href="sweetalert/dist/sweetalert.css">
+    <!-- Sweetalert -->
+    <!-- <link rel="stylesheet" type="text/css" href="sweetalert/dist/sweetalert.css"> -->
+    <link rel="stylesheet" type="text/css" href="sweetalert2-master/dist/sweetalert2.css">
 
     <!-- Webpage Logo -->
     <link rel="shortcut icon" href="images/favicon.ico">
-
 </head>
 <body>
     <div class="wrapper">
@@ -33,7 +33,9 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <img alt="ParkU" src="images/car.png" href="home.html">
+                    <a href="/home">
+                        <img alt="ParkU" src="images/car.png" href="home.html">
+                    </a>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
@@ -58,16 +60,16 @@
         <div class="options">
             <p><b>Current registered permits:</b>&nbsp&nbspYou currently have none registered.</p><br>
             <p class="custom_option">To purchase a permit complete the list below.</p>
-            <section class="main clearfix">              
+            <section class="main clearfix">
                 <h3>Select a spot type:</h3>
-                <select id="cd-dropdown" name="cd-dropdown" class="cd-select is-hidden">
+                <select id="cd-dropdown" name="cd-dropdown" class="cd-select is-hidden" required>
                     <option value="-1" selected>Spot Type</option>
                     <option value="1">Visitor (V)</option>
                     <option value="2">Visitor Premium (VP)</option>
                 </select>
 
                 <h3>Select a time limit:</h3>
-                <select id="cd-dropdown2" name="cd-dropdown" class="cd-select is-hidden">
+                <select id="cd-dropdown2" name="cd-dropdown" class="cd-select is-hidden" required>
                     <option value="-1" selected>Time Limit</option>
                     <option value="1">1 hour</option>
                     <option value="2">2 hours</option>
@@ -76,18 +78,22 @@
                     <option value="5">All Day</option>
                 </select>
 
+                <!-- Dropdown for Vehicle list, gets registered vehicles from database -->
                 <h3>Select your vehicle:</h3>
                 <select id="cd-dropdown3" name="cd-dropdown" class="cd-select is-hidden vehicles">
                     <option value="-1" selected>Vehicle</option>
                     {{#each car}}
                     <option value="1">{{vehicleName}}</option>
                     {{/each}}
-                    
                 </select>
             </section>
+            <!-- Purchase button that prompts user with sweetalerts -->
             <button type="submit" class="confirmation">Purchase</button>
+        <!-- .options close div -->
         </div>
+    <!-- .wrapper close div -->
     </div>
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -96,7 +102,8 @@
 
     <!-- Purchase pop up -->
     <script src="js/confirmation.js"></script>
-    <script src="sweetalert/dist/sweetalert.min.js"></script>
+    <!--<script src="sweetalert/dist/sweetalert.min.js"></script> -->
+    <script src="sweetalert2-master/dist/sweetalert2.min.js"></script> 
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
@@ -106,7 +113,7 @@
     <script type="text/javascript" src="js/jquery.dropdown.js"></script>
     <script src="js/modernizr.custom.63321.js"></script>
 
-    <!-- Dropdown -->
+    <!-- Dropdown, MUST be here I think -->
     <script type="text/javascript">
     $( function() {
         $( '#cd-dropdown' ).dropdown( {

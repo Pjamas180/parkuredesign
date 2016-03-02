@@ -13,6 +13,8 @@ var path = require('path');
 var handlebars = require('express3-handlebars');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 
 var index = require('./routes/index');
 var home = require('./routes/home');
@@ -25,6 +27,16 @@ var Model = require('./model');
 // var user = require('./routes/user');
 
 var app = express();
+
+// Defining the Mail Transport System
+var transport = nodemailer.createTransport(smtpTransport({
+    service: 'Gmail',
+    auth: {
+        user: 'parkuapp@gmail.com', // my mail
+        pass: 'parku123'
+    }
+}));
+
 
 // Passport stuff
 passport.use(new LocalStrategy(function(username, password, done) {
@@ -74,6 +86,7 @@ app.use(passport.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 // Passport stuff
+
 
 
 // development only
@@ -129,6 +142,27 @@ app.get('/home', function(req, res, next) {
           }
       );
   }
+});
+
+app.get('/send', function(req, res) {
+  var mailOptions={
+      to : req.query.to,
+      subject : req.query.subject,
+      text : req.query.text
+  }
+
+  console.log(mailOptions);
+
+  transport.sendMail(mailOptions, function(error, response) {
+    if (error) {
+      console.log(error);
+    }
+    else {
+      console.log("message sent");
+    }
+  });
+
+  //console.log(req.query.to);
 });
 
 app.get('/', route.signIn);

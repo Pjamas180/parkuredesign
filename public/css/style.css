@@ -24,7 +24,8 @@
 }
 
 .cd-active.cd-dropdown > span {
-  color: #5BC0DE;
+  /*color: #5BC0DE;*/
+  color: #3F8FBF;
 }
 
 .cd-active.cd-dropdown > span,

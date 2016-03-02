@@ -10,6 +10,39 @@ input {
 	border-radius: 3px; //CSS3 Feature
 }
 
+@font-face {
+   font-family: myFirstFont;
+   src: url(fonts/museosans-500.otf);
+
+   font-family: mySecondFont;
+   src: url(fonts/Brandon_light.otf);
+}
+
+/* This adjusts header font to the screen size (this is a phone) */
+@media screen and (min-width : 320px){
+  h1{
+		font-size: 2.0em;
+		font-family: mySecondFont;
+		font-style: italic;
+		text-align: center;
+	}
+}
+/* This adjusts header font to the screen size (this is computer) */
+@media screen and (min-width : 1004px){
+  h1{
+		font-size: 4.0em;
+		font-family: mySecondFont;
+		font-style: italic;
+		text-align: center;
+	}
+}
+
+.disabled
+{
+    background: none repeat scroll 0 0 burlyWood;
+    cursor: default !important;
+}
+
 .login-form {
 	text-align: center;
 	margin-right: auto;
@@ -23,16 +56,25 @@ input {
 .border button{
 	background-color: #4CAF50; /* Green */
 	border: none;
+	border-radius: 3px;
 	color: white;
 	padding: 15px 32px;
-	width: 200px;
+	width: 150px;
 
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
+	margin-top: 8px;
 }
+
+.border{
+	/*position: absolute;*/
+	z-index: 3;
+}
+
 .border p{
-	font-size: 1.3em;
+	font-size: 1.4em;
+	font-family: mySecondFont;
 }
 
 #signup{
@@ -53,35 +95,20 @@ input {
 	text-align: center;
 }
 
-/*
-#center {
-	width: 100%;
-	height: 100%;
-	position: inherit;
-	top:-50px;
-	bottom: 0;
-	left: 50px;
-	right: 0;
-	text-align: center;
-}*/
-
 #app_name {
-	font-size: 4em;
-	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-	font-family: helvetica;
-}
-
-.border{
-	/*padding-top: 12%;*/
-	/*position: absolute;*/
-	z-index: 3;
+	font-size: 5.5em;
+	margin-bottom: -25px;
+	font-family: mySecondFont;
+	/*font-weight: bold;*/
 }
 
 #slogan {
-	height:37px;
-	font-size:2em;
-	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-	font-family: helvetica;
+	height:100%;
+	font-size:2.3em;
+	/*text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;*/
+	margin-bottom: 5px;
+	font-family: mySecondFont;
+	font-weight: bold;
 }
 
 .registrationFormAlert{
