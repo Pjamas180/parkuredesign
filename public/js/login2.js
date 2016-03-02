@@ -1,4 +1,4 @@
-function initializePage() {
+$(document).ready(function () {
 	var loadDate = new Date();
 	console.log("login page is loaded");
 
@@ -8,4 +8,4 @@ function initializePage() {
 		var elapsed = now - loadDate;
 		ga('send', 'timing', 'signup', 'click', elapsed);
 	});
-}
+});
